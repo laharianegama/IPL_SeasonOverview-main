@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>IPL Season Overview</title>
+    <link rel = "icon" href = 
+"https://etimg.etb2bimg.com/photo/89965258.cms" 
+        type = "image/x-icon">
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3.v6.js"></script>
+    <script src="https://d3js.org/d3.v7.js"></script>
+    <script src="https://d3js.org/d3-hexbin.v0.2.min.js"></script>
+    <script src="https://d3js.org/d3-array.v2.min.js"></script>
+    <script src="https://d3js.org/d3-force.v2.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css"
+        integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <script src="js/pointschart.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/scatterplot.js"></script>
+    <script src="js/scorecard.js"></script>
+    <script src="js/selection.js"></script>
+    <script src="js/transferactivity.js"></script>
+</head>
+
+<body style="padding-left: 20px">
+    <div id="navbar">
+        <ul id="nav-item">
+            <li id='CSK'><a>CSK</a></li>
+            <li id='DC'><a>DC</a></li>
+            <li id='GT'><a>GT</a></li>
+            <li id='KKR'><a>KKR</a></li>
+            <li id='LSG'><a>LSG</a></li>
+            <li id='MI'><a>MI</a></li>
+            <li id='PK'><a>PK</a></li>
+            <li id='RCB'><a>RCB</a></li>
+            <li id='RR'><a>RR</a></li>
+            <li id='SRH'><a>SRH</a></li>
+            <li id='clear'><a>Clear</a></li>
+        </ul>
+    </div>
+
+    <div>
+        <br><br>
+        <div class="tilesDivision" style="display:flex; margin-top: 15px">
+            <div class="chart">
+                <h2>IPL Franchises</h2>
+                <div id="teams"></div>
+            </div>
+        </div>
+        <div class="infoDivision" style="display:flex; margin-top: -25px">
+            <div class="chart">
+                <h6>The IPL 2022 Season has been different from the previous season. Firstly, two teams, namely, Gujarat Titans and Lucknow Super Giants, have been added this year. Additionally, the league format has changed from the previous years, i.e., the teams are split into two groups, and every team in the group plays against the other team in the group twice and against teams in the other group once. Furthermore, the two most successful, namely Mumbai Indians and Chennai Super Kings, finished at the bottom of the points table for the first ever time. Since the start of IPL, only two teams have won it on the first try, i.e., Rajasthan Royals in 2008 and Gujarat Titans in 2022. Moreover, Gujarat Titans were never considered a contender; however, they defied all odds to win the trophy, like Leicester City in the 2016 Premier League Season.</h6>
+            </div>
+        </div>
+        <div class="rowDivision" style="display:flex; margin-top: 15px">
+            <div class="chart">
+                <h2>Teams Progression</h2>
+                <div id="pointsHistory"></div>
+            </div>
+            <div id = "iplData" class="textData">
+                <br>
+                <h2 class="summary" style="color: #996600;">IPL Teams Summary</h2>
+                <h5 class="homeStadium">First Place: Gujarat Titans</h5>
+                <h5 class="foundedIn">Last Place: Mumbai Indians</h5>
+                <h5 class="trophiesWon">Highest NNR: Rajasthan Royals</h5>
+                <h5 class="playerHistory">Longest Winstreak: 6 | Sunrisers Hyderabad</h5>
+                <h5 class="fansWorldwide">Longest Lossstreak: 8 | Mumbai Indians</h5>
+            </div>
+        </div>
+        <br>
+        <div class="rowDivision" style="display:flex; margin-top: 15px">
+            <div class="chart">
+                <h2>Match Overview</h2>
+                <div id="scorecard"></div>
+            </div>
+            <div id = "iplData" class="textData">
+                <br>
+                <h2 class="summary" style="color: #996600;">Match Summary</h2>
+                <h5 class="homeStadium">Venue: Sawai Mansingh Stadium</h5>
+                <h5 class="attendance">Attendance: 34963</h5>
+                <h5 class="foundedIn">Total Runs Scored: 263</h5>
+                <h5 class="trophiesWon">Total Wickets: 12</h5>
+                <h5 class="playerHistory">Total Extras: 18</h5>
+            </div>
+        </div>
+        <br><br><br><br><br>
+        <div class="rowDivision" style="display:flex; margin-top: 15px">
+            <div class="chart">
+                <h2>Player Statistics</h2>
+                <div id="scatterPlot"></div>
+            </div>
+            <div id = "iplData" class="textData">
+                <div><br>
+                    <h2 class="summary" style="color: #996600;">Players Summary</h2>
+                    <h5 class="orangeCap">Orange Cap: Jos Buttler</h5>
+                    <h5 class="purpleCap">Purple Cap: Yuzvendra Chahal</h5>
+                    <h5 class="highestSR">Highest Strikerate: Pat Cummins</h5>
+                    <h5 class="mostSixes">Most Sixes Hit: Jos Buttler</h5>
+                    <h5 class="mostFours">Most Fours Hit: Jos Buttler</h5>
+                    <h5 class="mostHatricks">Most Hatricks: Yuzvendra Chahal</h5>
+                    <h5></h5>
+                    <h5></h5>
+                </div>
+                <br><br><br>
+                <div id="scatterLegend">
+                    
+                </div>
+            </div>
+        </div>
+        <br>
+    </div>
+</body>
+</html>
